@@ -25,7 +25,7 @@ commands:
     permission: playervaults.admin
   pvhelpme:
     description: Pastes debug info to get better assistance.
-    permission: playervaults.admin/lp
+    permission: playervaults.admin
 
 permissions:
   playervaults.admin:

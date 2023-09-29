@@ -19,6 +19,7 @@
 package com.drtshock.playervaults.converters;
 
 import com.drtshock.playervaults.PlayerVaults;
+import com.drtshock.playervaults.vaultmanagement.IVaultManager;
 import com.drtshock.playervaults.vaultmanagement.VaultManager;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.ConfigurationSection;
@@ -33,7 +34,7 @@ public class Cosmic3Converter implements Converter {
     @Override
     public int run(CommandSender initiator) {
         PlayerVaults plugin = PlayerVaults.getInstance();
-        VaultManager vaultManager = VaultManager.getInstance();
+        IVaultManager vaultManager = VaultManager.getInstance();
         // Cosmic 3.x
         Path path = plugin.getDataFolder().toPath().getParent().resolve("CosmicVaults").resolve("vaults.yml");
         if (!Files.exists(path)) {

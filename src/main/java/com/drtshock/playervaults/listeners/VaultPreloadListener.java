@@ -19,6 +19,7 @@
 package com.drtshock.playervaults.listeners;
 
 import com.drtshock.playervaults.PlayerVaults;
+import com.drtshock.playervaults.vaultmanagement.IVaultManager;
 import com.drtshock.playervaults.vaultmanagement.VaultManager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -31,7 +32,7 @@ import java.util.UUID;
 
 public class VaultPreloadListener implements Listener {
 
-    final VaultManager vm = VaultManager.getInstance();
+    final IVaultManager vm = VaultManager.getInstance();
 
     @EventHandler(priority = EventPriority.MONITOR)
     public void onPlayerJoin(PlayerJoinEvent event) {

@@ -31,9 +31,7 @@ import com.drtshock.playervaults.listeners.Listeners;
 import com.drtshock.playervaults.listeners.SignListener;
 import com.drtshock.playervaults.listeners.VaultPreloadListener;
 import com.drtshock.playervaults.tasks.Cleanup;
-import com.drtshock.playervaults.vaultmanagement.EconomyOperations;
-import com.drtshock.playervaults.vaultmanagement.VaultManager;
-import com.drtshock.playervaults.vaultmanagement.VaultViewInfo;
+import com.drtshock.playervaults.vaultmanagement.*;
 import com.google.gson.Gson;
 import net.kyori.adventure.audience.Audience;
 import net.kyori.adventure.platform.bukkit.BukkitAudiences;
@@ -146,7 +144,12 @@ public class PlayerVaults extends JavaPlugin {
         time = System.currentTimeMillis();
         vaultData = new File(this.getDataFolder(), "newvaults");
         Conversion.convert(this);
-        new VaultManager(this);
+        //TODO: Add Vault Storage Method
+        new VaultManager(new YAMLVaults(this), this);
+        //TODO: Remove test mysql line;
+        //MySQLVaults mysqlTest = new MySQLVaults(this);
+        //mysqlTest.CreateDatabase("PlayerVaults");
+        // end test code
         debug("conversion", time);
         time = System.currentTimeMillis();
         debug("uuidvaultmanager", time);

@@ -19,6 +19,7 @@
 package com.drtshock.playervaults.listeners;
 
 import com.drtshock.playervaults.PlayerVaults;
+import com.drtshock.playervaults.vaultmanagement.IVaultManager;
 import com.drtshock.playervaults.vaultmanagement.VaultManager;
 import com.drtshock.playervaults.vaultmanagement.VaultViewInfo;
 import org.bukkit.Bukkit;
@@ -43,7 +44,7 @@ import java.util.stream.Collectors;
 public class Listeners implements Listener {
 
     public final PlayerVaults plugin;
-    private final VaultManager vaultManager = VaultManager.getInstance();
+    private final IVaultManager vaultManager = VaultManager.getInstance();
 
     public Listeners(PlayerVaults playerVaults) {
         this.plugin = playerVaults;

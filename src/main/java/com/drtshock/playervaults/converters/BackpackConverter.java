@@ -19,6 +19,7 @@
 package com.drtshock.playervaults.converters;
 
 import com.drtshock.playervaults.PlayerVaults;
+import com.drtshock.playervaults.vaultmanagement.IVaultManager;
 import com.drtshock.playervaults.vaultmanagement.VaultManager;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
@@ -64,7 +65,7 @@ public class BackpackConverter implements Converter {
 
     private int convert(File worldFolder, int intoVaultNum) {
         PlayerVaults plugin = PlayerVaults.getInstance();
-        VaultManager vaults = VaultManager.getInstance();
+        IVaultManager vaults = VaultManager.getInstance();
         int converted = 0;
         long lastUpdate = 0;
         File[] files = worldFolder.listFiles();
